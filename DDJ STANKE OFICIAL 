@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDJ STANKE | Techno & House</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        :root { --preto: #0a0a0a; --roxo: #6c2bd9; --roxo-claro: #9d65ff; --cinza: #1a1a1a; --branco: #fff; }
+        body { background: var(--preto); color: var(--branco); line-height: 1.6; }
+        
+        /* Cabeçalho */
+        header { background: linear-gradient(135deg, var(--roxo), #4a1fa0); padding: 2rem; text-align: center; position: relative; overflow: hidden; }
+        header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://images.unsplash.com/photo-1571974599782-87624638275e?w=1200') center/cover; opacity: 0.2; }
+        header > * { position: relative; z-index: 1; }
+        h1 { font-size: 4rem; font-weight: 900; letter-spacing: 4px; margin-bottom: 0.5rem; text-shadow: 0 0 30px var(--roxo-claro); }
+        .subtitulo { font-size: 1.3rem; opacity: 0.9; margin-bottom: 1rem; }
+        .tagline { font-style: italic; color: #d4c2ff; font-size: 1.1rem; }
+        
+        /* Navegação */
+        nav { background: var(--cinza); padding: 1rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(108,43,217,0.3); }
+        nav a { color: var(--branco); text-decoration: none; margin: 0 1.5rem; font-weight: 600; transition: color 0.3s; }
+        nav a:hover { color: var(--roxo-claro); }
+        .nav-center { text-align: center; }
+        
+        /* Seções */
+        section { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+        h2 { font-size: 2rem; color: var(--roxo-claro); margin-bottom: 2rem; border-bottom: 2px solid var(--roxo); padding-bottom: 0.5rem; display: inline-block; }
+        
+        /* Sobre */
+        .sobre-container { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
+        .foto-perfil { width: 100%; aspect-ratio: 1; background: var(--cinza); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 4rem; border: 3px solid var(--roxo); box-shadow: 0 0 30px rgba(108,43,217,0.4); }
+        .destaque { background: linear-gradient(90deg, var(--roxo), var(--roxo-claro)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; }
+        .citacao { font-size: 1.3rem; font-style: italic; border-left: 4px solid var(--roxo); padding-left: 1.5rem; margin: 2rem 0; color: #ccc; }
+        
+        /* Músicas */
+        .musicas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .faixa { background: var(--cinza); padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--roxo); transition: transform 0.3s, box-shadow 0.3s; }
+        .faixa:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(108,43,217,0.3); }
+        .faixa h3 { margin-bottom: 0.5rem; }
+        .faixa p { color: #888; font-size: 0.9rem; }
+        .play-btn { display: inline-block; margin-top: 1rem; background: var(--roxo); color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s; }
+        .play-btn:hover { background: var(--roxo-claro); }
+        
+        /* Ranking */
+        .ranking-box { background: linear-gradient(135deg, #1a1a1a, #2d1b4e); padding: 2rem; border-radius: 15px; text-align: center; border: 2px solid var(--roxo); }
+        .posicao { font-size: 4rem; font-weight: 900; color: var(--roxo-claro); }
+        .ouro { color: #ffd700; }
+        
+        /* Contato */
+        .redes { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+        .rede-link { background: var(--cinza); padding: 1rem 2rem; border-radius: 8px; color: white; text-decoration: none; font-weight: bold; transition: all 0.3s; border: 1px solid transparent; }
+        .rede-link:hover { border-color: var(--roxo); box-shadow: 0 0 20px rgba(108,43,217,0.5); }
+        
+        /* Rodapé */
+        footer { background: var(--cinza); text-align: center; padding: 2rem; margin-top: 3rem; color: #666; }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .sobre-container { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+            nav a { margin: 0 0.7rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>DDJ STANKE</h1>
+        <p class="subtitulo">Techno • House • Eletrônica</p>
+        <p class="tagline">"Transformo cada som da minha mente em batida. Essa é a minha realidade."</p>
+    </header>
+
+    <!-- Navegação -->
+    <nav>
+        <div class="nav-center">
+            <a href="#sobre">SOBRE</a>
+            <a href="#musicas">MÚSICAS</a>
+            <a href="#ranking">SPININ'</a>
+            <a href="#contato">CONTATO</a>
+        </div>
+    </nav>
+
+    <!-- Sobre -->
+    <section id="sobre">
+        <h2>🎧 SOBRE MIM</h2>
+        <div class="sobre-container">
+            <div class="foto-perfil">🎧</div>
+            <div>
+                <p><strong>DDJ STANKE</strong> é um artista e produtor de música eletrônica brasileiro, focado nos universos do <span class="destaque">Techno</span> e <span class="destaque">House</span>.</p>
+                <br>
+                <p>Diagnosticado com esquizofrenia, DDJ STANKE não vê isso como uma barreira — mas como parte de quem é. Sua música é a tradução sonora de um mundo interior intenso, onde cada batida, cada sintonia, representa uma batalha vencida e uma emoção transformada em arte.</p>
+                <br>
+                <p>Assim como gêneros como Aphex Twin, ele transforma sua realidade única em som — criando faixas que carregam profundidade, sentimento e uma honestidade brutal.</p>
+                
+                <div class="citacao">
+                    "A doença mora comigo, mas eu comanda a música." 🎚️🔥
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Músicas -->
+    <section id="musicas">
+        <h2>🎵 MINHAS FAIXAS</h2>
+        <div class="musicas-grid">
+            <div class="faixa">
+                <h3>🌊 Baixo Brasileiro</h3>
+                <p>Techno com raízes nacionais. Batida forte, identidade brasileira.</p>
+                <a href="#" class="play-btn">▶ Ouvir</a>
+            </div>
+            <div class="faixa">
+                <h3>🌑 Far Off Death</h3>
+                <p>Melancolia eletrônica. Sombras e sintetizadores em harmonia.</p>
+                <a href="#" class="play-btn">▶ Ouvir</a>
+            </div>
+            <div class="faixa">
+                <h3>✨ Secret Feelings</h3>
+                <p>House profundo. O que não se diz, se sente.</p>
+                <a href="#" class="play-btn">▶ Ouvir</a>
+            </div>
+            <div class="faixa">
+                <h3>🔊 Novas faixas em breve</h3>
+                <p>Sempre criando. O próximo som está nascendo agora.</p>
+                <span class="play-btn">Em breve</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ranking Spinin' -->
+    <section id="ranking">
+        <h2>🏆 SPININ' RECORDS TALENTS</h2>
+        <div class="ranking-box">
+            <p>Atualmente entre os melhores do país</p>
+            <div class="posicao ouro">#9</div>
+            <p>Milhares de artistas competindo — e eu estou lá.</p>
+            <br>
+            <p><em>"Não é sorte. É persistência, é paixão, é sobreviver e criar."</em></p>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <h2>🌐 ME ENCONTRE</h2>
+        <p style="text-align:center; font-size:1.1rem;">Ouça, siga e acompanhe tudo em tempo real:</p>
+        <div class="redes">
+            <a href="#" class="rede-link">🎵 Spotify</a>
+            <a href="#" class="rede-link">🎧 SoundCloud</a>
+            <a href="#" class="rede-link">📷 Instagram</a>
+            <a href="#" class="rede-link">🎶 YouTube</a>
+            <a href="#" class="rede-link">💿 Spinin' Records</a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2026 DDJ STANKE. Todos os direitos reservados.</p>
+        <p style="margin-top:0.5rem; font-size:0.9rem;">🎚️ Criando com a mente, vivendo com a música. Sempre em frente. 💪</p>
+    </footer>
+
+</body>
+</html>
